@@ -1,0 +1,31 @@
+{
+  "kind": "collectionType",
+  "collectionName": "replays",
+  "info": {
+    "singularName": "replay",
+    "pluralName": "replays",
+    "displayName": "Replay",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "answer": {
+      "type": "text"
+    },
+    "task": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::task.task",
+      "inversedBy": "replays"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "replays"
+    }
+  }
+}

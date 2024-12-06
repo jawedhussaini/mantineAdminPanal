@@ -1,0 +1,44 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tasks",
+  "info": {
+    "singularName": "task",
+    "pluralName": "tasks",
+    "displayName": "Task",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "taskField": {
+      "type": "text"
+    },
+    "tags": {
+      "type": "enumeration",
+      "enum": [
+        "Javascript",
+        "React",
+        "Strapi",
+        "Next js",
+        "JQuery"
+      ]
+    },
+    "replays": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::replay.replay",
+      "mappedBy": "task"
+    },
+    "Title": {
+      "type": "string"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "tasks"
+    }
+  }
+}
